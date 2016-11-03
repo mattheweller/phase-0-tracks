@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Practice Form</title>
+  </head>
+  <body>
+    <form action="success.html" method="post">
+      <!-- What's your favorite color? Orange or Blue -->
+      <label> Name:
+        <input name="name">
+      </label>
+      <br>
+      <br>
+
+      <label> What's your favorite color?
+        <select name="fav-color">
+          <option value="color">Orange</option>
+          <option value="color">Blue</option>
+          <option value="color">Red</option>
+        </select>
+      </label>
+      <br>
+      <br>
+      <label>
+        Text Area:
+        <textarea name="comments"></textarea>
+      </label>
+      <!-- Three more field types. Submit button / Checkbox -->
+      <br>
+      <br>
+      <label>
+        <input type="checkbox" name="color-blind" value="true">
+        Is your color not listed, or are you colorblind?
+      </label>
+      <br>
+      <br>
+      <button type="submit" name="submit-button">Submit if you dare!</button>
+    </form>
+  </body>
+</html>
