@@ -5,37 +5,38 @@
     <title>Practice Form</title>
   </head>
   <body>
-    <form action="success.html" method="post">
-      <!-- What's your favorite color? Orange or Blue -->
-      <label> Name:
-        <input name="name">
-      </label>
-      <br>
-      <br>
+    <form action="https://httpbin.org/post" method="post"> <!-- When done testing, replace with action="success.html"-->
+      <fieldset>
+        <legend>Basic Information</legend>
+        <div>
+          <label>Name: <input type="text" name="name"></label>
+          <br>
+        </div>
+        <div>
+          <label for ="fav-color"> What's your favorite color?
+            <select name="fav-color">
+              <option value="orange">Orange</option>
+              <option value="blue">Blue</option>
+              <option value="red">Red</option>
+            </select>
+          </label>
+        </div>
+      </fieldset><br>
 
-      <label> What's your favorite color?
-        <select name="fav-color">
-          <option value="color">Orange</option>
-          <option value="color">Blue</option>
-          <option value="color">Red</option>
-        </select>
-      </label>
-      <br>
-      <br>
-      <label>
-        Text Area:
-        <textarea name="comments"></textarea>
-      </label>
-      <!-- Three more field types. Submit button / Checkbox -->
-      <br>
-      <br>
-      <label>
-        <input type="checkbox" name="color-blind" value="true">
-        Is your color not listed, or are you colorblind?
-      </label>
-      <br>
-      <br>
-      <button type="submit" name="submit-button">Submit if you dare!</button>
-    </form>
+      <fieldset>
+        <legend>Follow up questions</legend>
+        <div>
+          <label for="comments">Please tell us more about your favorite color:</label><br>
+            <textarea name="comments" rows="5" cols="50"></textarea>
+        </div>
+        <div>
+          <label>
+            <input type="checkbox" name="color-blind" value="true">
+            Is your color not listed, or are you colorblind?
+          </label>
+        </div>
+      </fieldset><br>
+        <button type="submit" name="submit-button">Submit if you dare!</button>
+      </form>
   </body>
 </html>
