@@ -1,0 +1,33 @@
+/** {
+  outline: 1px solid red;
+  float: left;
+  clear: both;
+}*/
+
+.container {
+  margin: 50px auto;
+  width: 300px;
+  position: relative;
+
+}
+
+.hat {
+  position: absolute;
+  top: 0;
+  left: -8px;
+  z-index: 1;
+}
+
+.glasses {
+  position: absolute;
+  top: 163px;
+  left: 53px;
+  z-index: 1;
+}
+
+.octopus {
+  position: relative;
+  top: 65px;
+  left: 10px;
+  z-index: -1;
+}
