@@ -1,0 +1,22 @@
+#contact-info {
+  font-size: .8em;
+}
+
+.job {
+  background-color: #e9e5dc;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin-top: 5px;
+}
+
+ul.accomplishments {
+  font-size: .8em
+}
+
+a#name:hover {
+  content: attr(title);
+}
+
+section#volunteer-experience li:last-of-type {
+  color: red;
+}
