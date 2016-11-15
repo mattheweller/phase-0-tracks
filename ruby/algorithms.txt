@@ -1,0 +1,72 @@
+Create new function:
+
+1. Inform the robot to create a new function "Use elevator".
+
+Define the function:
+
+2. Use elevator will take an string as an input from me and will require "Identify Object"
+
+3. Because the string input contains numbers, we'll have to scan the string to see if the input contains only numbers, or letters and numbers, and handle them differently.
+
+4. Thoroughly define a translation of my commands so that the robot understands that when my input contains:
+  i.    a number + "st" or "th" to look for the button with that associated number.
+  ii.   "Basement Level" + a number, look for the button with "B" + that associated number.
+  iii.  "Lobby", or "Lower-lobby" look for the button with "L", or "LL" associated with it.
+  iv.   "Mezzanine", look for the button with "M" associated with it.
+  v.    "Ground", look for the button with "G" associated with it.
+        a. However, if there are no "B" + number, and there is an "L" button in the button array, "G" + a number refers to "Garage" + level defined by a number.
+
+Calling the function:
+
+5. If the robot, and I are in the elevator when I give the robot the input for Use elevator, the robot will use Identify Object to identify the button panel.
+
+Executing the function:
+
+6. Once the panel is identified, and the path to the panel is clear, the robot should approach the panel, so that the robot can reach and press the buttons from a safe distance.
+
+7. Robot should press the button that corresponds the given input. Once this is complete, exit the Use elevator function and be prepared for the next request.
+
+Alternative exiting the function to avoid getting stuck in a loop:
+
+8. If input is not identified on the button panel array, I'll say "Ohferchrissake! Get out of the way and I'll do it." Robot should then step a safe distance away from the button panel array.
+
+===============================================================
+
+
+Create new function:
+
+1. Inform the robot to create a new function "Do the Laundry".
+
+Define the function:
+
+2. Do the Laundry will require "Hamper" "Laundry Detergent" "Laundry money" "House keys" "Laundry Room" "Washing Machines" "Dryer" "Clothes Handling" "Color Awareness"
+
+Calling the function:
+
+3. If the robot is Home, and I tell the robot, either locally, or remotely, "Do the laundry"
+
+Executing the function:
+
+4.  Robot will locate the Hamper, pick up and secure the hamper for carrying.
+5.  Robot will locate the Laundry Detergent, pick up and secure the Laundry Detergent for carrying.
+6.  Robot will locate the Laundry money, pick up and place the Laundry money in Robot's robo-pocket...
+7.  Robot will locate the House Keys, pick up and place the Laundry money in Robot's robo-pocket...
+8.  Robot will exit Home and once outside lock the door with the House Keys, returning House Keys to the robo-pocket.
+9.  Robot will travel to and enter the Laundry Room.
+10. Robot will approach the Washing Machines and determine if they are currently in use.
+11. If the Washing Machines are not in use, Robot will use Color Awareness and sort the laundry between bright colors, dark colors, and garments with special Clothes Handling instructions into "Loads".
+12. Robot will determine that no load is too large for any one Washing Machine.
+13. Robot will load one load into each available Washing Machine.
+14. Robot will identify the money slots on the Washing Machines, and place the appropriate amount of money needed into the slots.
+15. Robot will place the appropriate amount of Laundry Detergent into each Washing Machine that has one of our loads loaded into it.
+16. Robot will set the settings of the Washing Machine, according to the load's Clothes Handling instructions, and start the washing Machine.
+17. Robot will wait in the Laundry room, in a safe, and out of the way space until the Washing Machine has finished.
+18. Robot will use Dryer to repeat steps 10, 13, 14, 16, and 17.
+19. Robot will repeat Washing Machines and Dryer process until all clothes are washed and dried.
+20. robot will check that clothes are dry at the end of each completed Dryer cycle, and repeat steps 16, 17 if clothes are not dry.
+21. Robot will use Cloths Handling to fold the clothes, and place into Hamper.
+22. Robot will travel from Laundry Room to Home, once inside, lock the door, return House Keys, Laundry Money, Laundry Detergent, and Hamper.
+
+Alternative exiting the function to avoid getting stuck in a loop:
+
+23. If any of these steps fail, I'll say "Ohferchrissake! Get out of the way and I'll do it." Robot should then step a safe distance away from the Laundry.
