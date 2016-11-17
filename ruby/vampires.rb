@@ -2,10 +2,11 @@ Vampire_Names = "dra drac ula cula fang nosf eratu"
 Allergies = %w(peanuts sunshine wheat beestings)
 Employee_Roster = []
 
-
 def vamp_namer(name)
 	vamp_array = Vampire_Names.split(" ")
-	vamp_array.each { |vamp_ele| return true if name.downcase.include?(vamp_ele) }
+	vamp_array.each do |vamp_ele|
+    return true if name.downcase.include?(vamp_ele)
+  end
 	false
 end
 
