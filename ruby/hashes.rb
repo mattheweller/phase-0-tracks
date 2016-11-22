@@ -63,11 +63,11 @@ hash[:Phone] = gets.chomp
 puts "Please enter your email:"
 hash[:Email] = gets.chomp
 
-puts "Would you like to subcribe to our newsletter? (y / n)"
+puts "Would you like to subscribe to our newsletter? (y / n)"
 if gets.chomp == "y"
-  hash[:Subcribed] = true
+  hash[:Subscribed] = true
 else
-  hash[:Subcribed] = false
+  hash[:Subscribed] = false
 end
  
 puts "Please enter your age:"
@@ -85,22 +85,31 @@ hash["Favorite Band"] = gets.chomp
 p_hash(hash)
 puts ""
 
-puts "Please confirm that this information is correct. If you need to edit a field, please enter the name of that field:"
+puts "Please confirm that this information is correct. If you need to edit a field, please enter the name of that field. Otherwise, simply enter 'none':"
 input = gets.chomp
 
-puts "Ok. You'd like to change the #{input} field, correct? (y /n)"
-response = gets.chomp
-if response == "y"
-  puts "Please enter your update to the #{input} field"
-  edit = gets.chomp
-if hash.has_key?(input.to_sym)
-  hash[input.to_sym] = edit
-elsif hash.has_key?(input)
-  hash[input] = edit
-end
-  
+if input == "none"
   p_hash(hash)
+else
 
-elsif response == "n"
+  puts "Ok. You'd like to change the #{input} field, correct? (y /n)"
+  response = gets.chomp
+  if response == "y"
+    puts "Please enter your update to the #{input} field"
+    edit = gets.chomp
+    if hash.has_key?(input.to_sym) && hash[input.to_sym].class == Fixnum
+      hash[input.to_sym] = edit.to_i
+    elsif hash.has_key?(input.to_sym)
+      hash[input.to_sym] = edit
+    elsif hash.has_key?(input) && hash[input].class == Fixnum
+      hash[input] = edit.to_i
+    elsif hash.has_key?(input)
+      hash[input] = edit
+    end
+    
   p_hash(hash)
+  
+  elsif response == "n"
+    p_hash(hash)
+  end
 end
