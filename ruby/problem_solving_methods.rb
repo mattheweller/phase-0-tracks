@@ -12,11 +12,9 @@ p "in_array?: " + (in_array?([42, 89, 23, 1], 24) == nil).to_s
 ###############################################
 
 def fib_nums(num)
-  result = [0, 1]
-  (2...num).each do |i|
-    result << ((result[i - 2]) + (result[i - 1]))
-  end
-  result
+  arr = [0, 1]
+  (2...num).each {arr << ((arr[-2]) + (arr[-1]))}
+  arr
 end
 
 # def fib_nums(num)
