@@ -2,11 +2,11 @@ class Santa
   attr_reader :gender, :ethnicity
   attr_accessor :reindeer_ranking, :age
 
-  def initialize(gender, enthnicity)
+  def initialize(gender, ethnicity, age)
     @gender = gender
-    @enthnicity = enthnicity
+    @ethnicity = ethnicity
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-    @age = 0
+    @age = age
   end
 
   def speak
@@ -27,15 +27,12 @@ class Santa
   end
 end
 
-# santas = []
-# genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
-# ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
-# genders.length.times do |i|
-#   santas << Santa.new(genders[i], ethnicities[i])
-# end
-
-
-kris = Santa.new("male", "white")
-p kris.reindeer_ranking
-p kris.get_mad_at("Rudolph")
-p kris.reindeer_ranking
+santas = []
+genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+100.times do |i|
+  santas << Santa.new(genders.sample, ethnicities.sample, rand(140))
+  # puts "Santa number #{i + 1} Gender:    #{santas[i].gender}"
+  # puts "Santa number #{i + 1} Ethnicity: #{santas[i].ethnicity}"
+  # puts "Santa number #{i + 1} Age:       #{santas[i].age}"
+end
