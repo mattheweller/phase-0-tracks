@@ -19,5 +19,3 @@ class TodoList
     @list[index]
   end
 end
-
-list = TodoList.new(["do the dishes", "mow the lawn"])
