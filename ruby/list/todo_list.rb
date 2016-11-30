@@ -12,10 +12,10 @@ class TodoList
   end
 
   def delete_item(item)
-    @list.delete_if { |i| i == item }
+    @list.delete_if { |got_done| got_done == item }
   end
 
-  def get_item(index)
-    @list[index]
+  def get_item(list_position)
+    @list[list_position]
   end
 end
