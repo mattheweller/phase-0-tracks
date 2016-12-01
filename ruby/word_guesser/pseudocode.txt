@@ -1,23 +1,32 @@
-Specify game code from the UI
-Create a Game class
-Initialize it with
-is_over to false
-store the first user's guess
+Define the game code:
+  Create a Game class, and initialize it with:
+  is_over to false
+  A secret word set by Player 1
+  An empty array to populate with Player 2's guesses
 
+  define method to check the Player 2 guess
+  define method to display the length of the secret word and the progress of the guessing
+  define method to track the number of guesses available
 
-define method initial state of the
-define method to
-define method to
+Define the UI:
+  Print game introduction
+  Prompt Player one to enter their secret word, and use it to initialize a new game
+  Using the display method, print an array that is the length of the secret word with ordered numbers in the letter's place, separated by dashes
+   ^Test without dashes first
+  Prompt Player 2 to enter a number and a guess
+    Store the guess in the Guesses Array
+    if the Guesses Array already includes the guess
+      do not decrement the number of guesses available
+      
+    if the guess at index matches the letter at index of the secret word
+      Update the display array
 
-Define the UI
-Print game introduction
-initialize a new game
-print a request for a word (or optionally a phrase, but this will require " " parsing),
-Gets the input and store as the secret word
-print a request for another user to guess the word, one letter at a time.
-Each time the player makes a guess, output something like "_ _ _ _ _ _ _" to represent the secret word's length
-The guessing player receives continual feedback on the current state of the word. So if the secret word is "unicorn", the output would become "_ _ _ c _ _ _" after the user enters a guess of "c".
-Guesses are limited to the length of the number of letters in the word
-Repeated guesses do not count against the user.
+  print a request for a word (or optionally a phrase, but this will require " " parsing),
+  Gets the input and store as the secret word
+  print a request for another user to guess the word, one letter at a time.
+  Each time the player makes a guess, output something like "1 2 3 4 5 6 7" to represent the secret word's length
+  The guessing player receives continual feedback on the current state of the word. So if the secret word is "unicorn", the output would become "1 2 3 C 5 6 7" after the user enters a guess of "c".
+  Guesses are limited to the length of the number of letters in the word
+  Repeated guesses do not count against the user.
 
-The user should get a congratulatory message if they win, and a taunting message if they lose.
+  The user should get a congratulatory message if they win, and a taunting message if they lose.
