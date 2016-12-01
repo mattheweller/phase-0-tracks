@@ -1,5 +1,5 @@
 Define the game code:
-  Create a Game class, and initialize it with:
+  #Create a Game class, and initialize it with:
   is_over to guesses available is >= 0
   A secret word set by Player 1
   Player 2's individual guess
@@ -13,7 +13,7 @@ Define the UI:
   Print game introduction
   Prompt Player one to enter their secret word, and use it to initialize a new game
   Using the display method, print an array that is the length of the secret word with
-  ...ordered numbers in the letter's place, separated by spaces
+  ...underscores in the letter's place, separated by spaces
    ^Test without dashes first
 
   In a loop While not is_over
@@ -32,8 +32,22 @@ Define the UI:
   end the loop
 
 
-
+Bonus:
+1. Whole word entry to win
+2. Phrase secret words (handle " ")
+Validation:
 
 Do I need this?
     if the Guesses Array already includes the guess
       do not decrement the number of guesses available
+
+
+Tests:
+
+# #tests:
+# guess counter
+# guess counter doesn't increment when already guessed letter guessed
+# display equals array.length of secret word
+# display update returns
+# Guesses left counts down to one, then prints taunting message
+# correct guess flips the value of is_over, prints the winning message, showing the secret word and exits the game
