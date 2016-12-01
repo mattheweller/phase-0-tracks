@@ -1,53 +1,39 @@
 Define the game code:
-  #Create a Game class, and initialize it with:
+Create a Game class, and initialize it with:
   is_over to guesses available is >= 0
   A secret word set by Player 1
   Player 2's individual guess
   An empty array to populate with Player 2's guesses
 
-  define method to check the Player 2 guess
-  define method to display the length of the secret word and the progress of the guessing
-  define method to track the number of guesses available (Length of the secret word + 3)
+  define method to check Player 2's guess
+  define method to display the length of the secret word in dashes or underscores
 
 Define the UI:
   Print game introduction
-  Prompt Player one to enter their secret word, and use it to initialize a new game
-  Using the display method, print an array that is the length of the secret word with
-  ...underscores in the letter's place, separated by spaces
-   ^Test without dashes first
+  Prompt Player 1 for a secret word, and use it to initialize a new game
+  display the secret word as dashed, and populate it with correct guesses
 
   In a loop While not is_over
-    Prompt Player 2 to enter a number and a guess
-    Store the guess
-    If the the unique sorted Guesses Array equals the unique sorted secret_word
+    Prompt Player 2 to enter a guess and the number of guesses left
+    Store the guess and update the display dashes
+    decrement the guesses count
+
+    If the guesses array doesn't have the guessed letter or the letter is in the secret word
+      push the guess into the guesses array
       is_over is true, and Player 2 wins.
+
     If the guess matches letters of the secret word
       Update the display array at the indexs where that letter matches
-      decrement the number of guesses available
-      push the guess to the Guesses Array unless Guesses Array already includes the guess
-    If the guess does not match letters of the secret word
-      decrement the number of guesses
-      If number of guesses == 0
-        Player 2 loses. Break out of the loop
+    if a unique sorted guesses array == a unique sorted secret word array
+        The game is_over
+        Player 2 wins!
+    If number of guesses == 0
+      Player 2 loses. Break out of the loop
   end the loop
-
 
 Bonus:
 1. Whole word entry to win
 2. Phrase secret words (handle " ")
+
 Validation:
-
-Do I need this?
-    if the Guesses Array already includes the guess
-      do not decrement the number of guesses available
-
-
-Tests:
-
-# #tests:
-# guess counter
-# guess counter doesn't increment when already guessed letter guessed
-# display equals array.length of secret word
-# display update returns
-# Guesses left counts down to one, then prints taunting message
-# correct guess flips the value of is_over, prints the winning message, showing the secret word and exits the game
+1. Case where unique sorted guesses and unique sorted secret word aren't the same word
