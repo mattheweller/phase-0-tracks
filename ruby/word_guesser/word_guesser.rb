@@ -21,3 +21,9 @@ end
 #   display[i] = guess if ele == guess
 # end
 # p display.join(" ")
+
+
+# one = "qaaweerty".split("")
+# two = "ytrewaaaq".split("")
+#
+# one.uniq.sort == two.uniq.sort
