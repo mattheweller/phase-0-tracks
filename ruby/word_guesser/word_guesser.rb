@@ -16,7 +16,11 @@ class WordGuesser
 
   def dasherize
     @secret_word.map do |letter|
-      letter = "_"
+      if letter == " "
+        letter = " "
+      else
+        letter = "_"
+      end
     end
   end
 end
