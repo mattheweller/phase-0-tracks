@@ -33,7 +33,7 @@ Define the UI:
 
 Bonus:
 1. Whole word entry to win
-2. Phrase secret words (handle " ")
+2. Phrase secret words (handle " ") #done!
 
 Validation:
 1. Case where unique sorted guesses and unique sorted secret word aren't the same word
