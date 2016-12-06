@@ -1,8 +1,8 @@
 var colors = ["red", "green", "blue", "yellow"];
-var names = ["Fred", "Dibbs", "One-piece", "Square Deal"];
+var names = ["Fred", "Dibbs", "One Piece", "Square Deal"];
 
 colors.push("brown");
-names.push("hoof-hearted");
+names.push("Hoof Hearted");
 
 var horses = {};
 
