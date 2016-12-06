@@ -7,6 +7,15 @@ var str = "Loop over me!";
 //   console.log(let);
 // });
 
+
+// Pseudocode:
+// 1. declare a function that takes in a string
+// 2. store the string as an array of characters in a variable
+// 3. store an empty string to push the reversed letters into
+// 4. create a decrementing for loop
+// 5. concatinate the empty string with the last index of the letter array
+// 6. return the reversed string
+
 function reverseSentence(sentence){
   var letters = sentence.split("");
   var reversed = "";
