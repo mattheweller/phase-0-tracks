@@ -1,3 +1,37 @@
+// RELEASE 0:
+
+// function that takes an array of words or phrases and
+// returns the longest word or phrase in the array.
+// Hint: "some string".length will do what you expect in JS.
+
+// Add driver code that tests your function on a few arrays.
+
+// PSEUDOCODE:
+// 1. Declare a function that takes an array of strings
+// 2. Inside the function, declare a variable to store the longest word
+// 3. Assign the longest word variable the value of the 0th index of the array.
+// 4. Create a loop to iterate through the length of the array
+// 5. Compare the lengths of the element at the current index to the length of longest word
+// 6. If the element at the current index is longer than the length of longest word, reassign longest word to the element at the current index
+// 7. Complete the loop and, reassigning as many times as necessary, and return the longest word.
+
+function longestWord(array) {
+  var longest = array[0]
+
+  for (var i = 0; i < array.length; i++) {
+    if (array[i].length > longest.length) {
+      longest = array[i]
+    }
+  }
+  return longest;
+}
+
+var dinner = ["spaghetti","meat balls","pepperoni pizza"];
+var phrases = ["what would you like for dinner?","I'm not sure I'm that hungry yet","Check please!"];
+
+console.log("The longest word is" + " '" + longestWord(dinner) + "' " + "with a length of " + longestWord(dinner).length + " letters!");
+console.log("The longest word is" + " '" + longestWord(phrases) + "' " + "with a length of " + longestWord(phrases).length + " letters!");
+
 // RELEASE 1:
 // function takes two objects
 // check to see if the objects share at least one key-value pair.
@@ -6,6 +40,8 @@
 // Hint: String ('age') or an identifier name (age) can be considered equivalent.
 
 // Add some driver code that tests both outcomes of your function.
+
+// PSEUDOCODE:
 
 // 1. Declare a function that takes two objects.
 // 2. Created a nested loop to check each property for equivalency.
@@ -38,7 +74,7 @@ function pairMatch(obj1, obj2) {
   }
   return false;
 }
-
+  
 var obj1 = {name: "Steven", age: 54}
 var obj2 = {name: "Tamir", age: 54}
 var horses = {
