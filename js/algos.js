@@ -73,7 +73,7 @@ function pairMatch(obj1, obj2) {
 
 // Add driver code that does the following 10 times: generates an array, prints the array, feeds the array to your "longest word" function, and prints the result.
 
-// R1 PSEUDOCODE:
+// R2 PSEUDOCODE:
 // 1. Declare a function that takes a number
 // 2. Create a variable that stores a string of the alphabet as one word.
 // 3. Create an empty array
