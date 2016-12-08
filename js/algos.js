@@ -65,7 +65,7 @@ function pairMatch(obj1, obj2) {
   return false;
 }
 
-// RELEASE 1:
+// RELEASE 2:
 // function that takes an integer for length, and builds and returns an array of strings
 // of the given length. So if we ran your function with an argument of 3, we would get
 // an array of 3 random words back.
