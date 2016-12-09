@@ -58,8 +58,19 @@ function pairMatch(obj1, obj2) {
   for (var prop1 in obj1) {
     for (var prop2 in obj2) {
       if ((obj1[prop1] === obj2[prop2]) && (prop1 === prop2)) {
-        return true;
+        return [obj1[prop1], obj2[prop2]];
       }
+    }
+  }
+  return false;
+}
+
+// Third try:
+
+function pairMatch(obj1, obj2) {
+  for (var prop in obj1) {
+    if (obj1[prop] === obj2[prop]) {
+      return true;
     }
   }
   return false;
@@ -88,19 +99,27 @@ function pairMatch(obj1, obj2) {
 // 12. Repeat the whole process until exhausting the outter loop.
 // 13. return the built up array.
 
+function randomNumberTo(num) {
+  return (Math.floor(Math.random() * num))
+}
+
+function randomWord() {
+  var letters = "wertyuiopljhgfdsacbnm";
+  var resultWord = "";
+  var wordLength = randomNumberTo(9) + 1; // Adding 1 to prevent zero length words.
+
+  for (var i = 0; i < wordLength; i++) {
+    var letterIndex = randomNumberTo(letters.length);
+    resultWord += letters[letterIndex];
+  }
+  return resultWord;
+}
+
 function autoTest(number) {
-  var letters = "wertyuiopljhgfdsacbnm"
   var result = []
 
   for (var i = 0; i < number; i++) {
-    var randomWord = "";
-    var wordLength = (Math.floor(Math.random() * 9) + 1);
-
-    for (var j = 0; j < wordLength; j++) {
-      var letterIndex = Math.floor(Math.random() * letters.length);
-      randomWord += letters[letterIndex];
-    }
-    result.push(randomWord);
+    result.push(randomWord());
   }
   return result;
 }
