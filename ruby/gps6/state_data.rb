@@ -2,6 +2,10 @@
 #population density is number of people per square mile as of 2012
 #this data is updated every year with estimates from a 10 year census
 
+X_LARGE_STATE = {pop_dense: 200, pop_death: 0.4, speed: 0.5}
+LARGE_STATE = {pop_dense: 150, pop_death: 0.3, speed: 1}
+MEDIUM_STATE = {pop_dense: 100, pop_death: 0.2, speed: 1.5}
+SMALL_STATE = {pop_dense: 50, pop_death: 0.1, speed: 2}
 
 STATE_DATA = {
   "Alabama" => {population_density: 94.65, population: 4822023},
