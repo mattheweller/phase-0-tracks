@@ -31,15 +31,15 @@ class VirusPredictor
     # predicted deaths is solely based on population density
     case
       when @population_density >= X_LARGE_STATE[:pop_dense]
-        return number_of_deaths = (@population * X_LARGE_STATE[:pop_death]).floor
+        number_of_deaths = (@population * X_LARGE_STATE[:pop_death]).floor
       when @population_density >= LARGE_STATE[:pop_dense]
-        return number_of_deaths = (@population * LARGE_STATE[:pop_death]).floor
+        number_of_deaths = (@population * LARGE_STATE[:pop_death]).floor
       when @population_density >= MEDIUM_STATE[:pop_dense]
-        return number_of_deaths = (@population * MEDIUM_STATE[:pop_death]).floor
+        number_of_deaths = (@population * MEDIUM_STATE[:pop_death]).floor
       when @population_density >= SMALL_STATE[:pop_dense]
-        return number_of_deaths = (@population * SMALL_STATE[:pop_death]).floor
+        number_of_deaths = (@population * SMALL_STATE[:pop_death]).floor
       else
-        return number_of_deaths = (@population * 0.05).floor
+        number_of_deaths = (@population * 0.05).floor
     end
   end
 # speed_of_spread looks at population_density and calculates the speed of spread of the disease.
@@ -50,13 +50,13 @@ class VirusPredictor
 
     case
       when @population_density >= X_LARGE_STATE[:pop_dense]
-        return speed += X_LARGE_STATE[:speed]
+        speed += X_LARGE_STATE[:speed]
       when @population_density >= LARGE_STATE[:pop_dense]
-        return speed += LARGE_STATE[:speed]
+        speed += LARGE_STATE[:speed]
       when @population_density >= MEDIUM_STATE[:pop_dense]
-        return speed += MEDIUM_STATE[:speed]
+        speed += MEDIUM_STATE[:speed]
       when @population_density >= SMALL_STATE[:pop_dense]
-        return speed += SMALL_STATE[:speed]
+        speed += SMALL_STATE[:speed]
       else
         speed += 2.5
     end
