@@ -27,6 +27,9 @@ ORDER BY fastest_lap_time ASC;
 
 /////// 5. Delete an item that meets some condition (you can choose a condition that makes sense).
 
+DELETE FROM drivers
+WHERE id=3;
+
 /////// 6. Outer Join
 
 SELECT  drivers.name AS "Driver",
