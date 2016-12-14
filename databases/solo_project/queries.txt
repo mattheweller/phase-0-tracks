@@ -1,1 +1,38 @@
-select * from drivers, races, teams;
+/////// 1. Display the information in one table (either table is fine):
+
+SELECT * FROM drivers, races, teams;
+
+/////// 2. Update an item that meets some condition (you can choose a condition that makes sense):
+
+UPDATE drivers SET fastest_lap_time=2.54 WHERE id=3;
+
+/////// 3. Display the information in both tables using one query.
+
+SELECT  drivers.name AS "Driver",
+        teams.name AS "Team",
+        fastest_lap_time AS "Fastest Lap",
+        races.name AS "Grand Prix",
+        races.race_length AS "Lap Length in km"
+FROM drivers
+JOIN teams ON drivers.team_id = teams.id
+JOIN races ON drivers.fastest_lap_location_id = races.id
+ORDER BY fastest_lap_time ASC;
+
+/////// 4. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+SELECT  drivers.name AS "Driver",
+        fastest_lap_time AS "Fastest Lap"
+FROM drivers
+ORDER BY fastest_lap_time ASC;
+
+/////// 5. Delete an item that meets some condition (you can choose a condition that makes sense).
+
+/////// 6. Outer Join
+
+SELECT  drivers.name AS "Driver",
+        races.name AS "Grand Prix",
+        fastest_lap_time AS "Fastest Lap"
+FROM races
+LEFT JOIN drivers
+ON races.id=drivers.fastest_lap_location_id
+WHERE races.race_length < 5;
