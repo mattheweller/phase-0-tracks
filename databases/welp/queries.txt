@@ -1,0 +1,31 @@
+1. Prints out everything that we entered, in every iteration.
+
+SELECT * FROM users, reviews, businesses;
+
+2. Join both tables
+
+SELECT  *
+FROM users
+JOIN reviews ON users.id = reviews.user_id
+JOIN businesses ON reviews.business_id = businesses.id;
+
+3. Just the business name, user's names, star rating, and the comment.
+
+SELECT  businesses.name AS "Business",
+        (first_name || " " || last_name) AS "Reviewer Name",
+        reviews.stars AS "Stars",
+        reviews.comment AS "Review"
+FROM users
+JOIN reviews ON users.id = reviews.user_id
+JOIN businesses ON reviews.business_id = businesses.id;
+
+4. Just the data of all three tables for just one particular business.
+
+SELECT  businesses.name AS "Business",
+        (first_name || " " || last_name) AS "Reviewer Name",
+        reviews.stars AS "Stars",
+        reviews.comment AS "Review"
+FROM users
+JOIN reviews ON users.id = reviews.user_id
+JOIN businesses ON reviews.business_id = businesses.id
+WHERE businesses.id=1;
