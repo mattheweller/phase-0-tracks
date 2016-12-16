@@ -24,11 +24,11 @@ SQL
 notebook.execute(create_table_cmd)
 
 # test notes
-notebook.execute("INSERT INTO notes (list_counter, note) VALUES (1, 'This is a test note.')")
-notebook.execute("INSERT INTO notes (list_counter, note) VALUES (2, 'A second test note.')")
-notebook.execute("INSERT INTO notes (list_counter, note) VALUES (3, 'Another test note.')")
-notebook.execute("INSERT INTO notes (list_counter, note) VALUES (4, 'And another.')")
-notebook.execute("INSERT INTO notes (list_counter, note) VALUES (5, 'A fifth test note.')")
+# notebook.execute("INSERT INTO notes (list_counter, note) VALUES (1, 'This is a test note.')")
+# notebook.execute("INSERT INTO notes (list_counter, note) VALUES (2, 'A second test note.')")
+# notebook.execute("INSERT INTO notes (list_counter, note) VALUES (3, 'Another test note.')")
+# notebook.execute("INSERT INTO notes (list_counter, note) VALUES (4, 'And another.')")
+# notebook.execute("INSERT INTO notes (list_counter, note) VALUES (5, 'A fifth test note.')")
 
 # CRUD Methods:
 
@@ -37,7 +37,19 @@ def create_note(notebook, list_counter, note)
   notebook.execute("INSERT INTO notes (list_counter, note) VALUES (?, ?)",[list_counter, note])
 end
 
-# read
+create_note(notebook, 6, "A sixth test note.")
+
+# read / print
+def print_list(notebook)
+  list = notebook.execute("SELECT note FROM notes")
+  count = 0
+  list.each do |notes|
+    count += 1
+    print "Note #{count}: #{notes['note']} \n"
+  end
+end
+
+print_list(notebook)
 
 # update
 
