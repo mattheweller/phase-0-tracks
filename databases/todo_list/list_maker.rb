@@ -53,8 +53,16 @@ def update(notebook, number, note)
 end
 
 # delete
+def delete_notebook(notebook)
+  notebook.execute("DROP TABLE notes")
+end
 
-
+def delete_note(notebook, number)
+  notebook.execute("DELETE FROM notes WHERE list_counter=?", [number])
+  (counter(notebook) - number).times do |i|
+    notebook.execute("UPDATE notes SET list_counter=? WHERE list_counter=?", [(i + number + 1), (i + number)])
+  end
+end
 
 # UI
 
@@ -65,7 +73,8 @@ end
 # Tests
 
 
-# create_note(notebook, "Another test note.")
+create_note(notebook, "Test note #{counter(notebook)}")
 # counter(notebook)
+update(notebook, 3, "Updated test note.")
+delete_note(notebook, 5)
 print_list(notebook)
-# update(notebook, 3, "Updated test note.")
