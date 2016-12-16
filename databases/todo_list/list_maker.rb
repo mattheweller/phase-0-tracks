@@ -57,11 +57,24 @@ def delete_notebook(notebook)
   notebook.execute("DROP TABLE notes")
 end
 
+# def delete_note(notebook, number)
+#   notebook.execute("DELETE FROM notes WHERE list_counter=?", [number])
+#   notebook.execute("SELECT list_counter FROM notes WHERE list_counter > ?") do |row|
+#     notebook.execute("UPDATE notes SET list_counter = (list_counter - 1) WHERE list_counter >= ?", [number - 1])
+#     # notebook.execute("UPDATE notes SET list_counter=? WHERE list_counter > ?", [number, (row + number - 1)])
+#   end
+# end
+#
+# def reset_counter(notebook)
+#   counter(notebook).times do |i|
+#     .execute("SELECT * FROM notes") do |row|
+#     notebook.execute("UPDATE notes SET list_counter=#{row}")
+#   end
+# end
+
 def delete_note(notebook, number)
-  notebook.execute("DELETE FROM notes WHERE list_counter=?", [number])
-  (counter(notebook) - number).times do |i|
-    notebook.execute("UPDATE notes SET list_counter=? WHERE list_counter=?", [(i + number + 1), (i + number)])
-  end
+  notebook.execute("DELETE FROM notes WHERE list_counter = ?", number)
+  notebook.execute("UPDATE notes SET list_counter = (list_counter - 1) WHERE list_counter > ?", number)
 end
 
 # UI
@@ -72,9 +85,12 @@ end
 
 # Tests
 
-
-create_note(notebook, "Test note #{counter(notebook)}")
-# counter(notebook)
-update(notebook, 3, "Updated test note.")
+# delete_notebook(notebook)
+# create_note(notebook, "Test note #{counter(notebook)}")
+# # # counter(notebook)
+# update(notebook, 3, "Updated test note.")
+print_list(notebook)
 delete_note(notebook, 5)
 print_list(notebook)
+# # reset_counter(notebook)
+# p notebook.execute("SELECT list_counter FROM notes")
