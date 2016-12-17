@@ -17,7 +17,7 @@ notebook.execute(create_table_cmd)
 # CRUD Methods:
 # create
 def create_note(notebook, note)
-  notebook.execute("INSERT INTO notes (list_counter, note) VALUES (#{counter(notebook)}, ?)",[note])
+  notebook.execute("INSERT INTO notes (list_counter, note) VALUES (#{counter(notebook)}, ?)", note)
 end
 
 def counter(notebook)
@@ -34,7 +34,7 @@ end
 
 # update
 def update(notebook, number, note)
-  notebook.execute("UPDATE notes SET note='#{note}' WHERE list_counter=?", [number])
+  notebook.execute("UPDATE notes SET note='#{note}' WHERE list_counter=?", number)
 end
 
 # delete
