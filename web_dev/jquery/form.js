@@ -19,7 +19,7 @@ $(function() {
       $('ul li:first').before('<li>' + item + '</li>');
       $newItemForm.hide();
       $newItemButton.show();
-      $textInput.val('');
+      // $textInput.val('');
     }
   });
 

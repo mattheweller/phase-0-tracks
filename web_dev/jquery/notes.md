@@ -11,10 +11,9 @@ Release 0:
 
 Release 1: Study Up
 -
-LEARN THE THING (2 HOURS MAX)
-Time to execute your plan. Aaaand ... go! When the time is up, record in notes.md which strategies seemed to be the most effective.
+W3Schools was very helpful!
 
 Release 2: Make a Thing
 -
-DO THE THING (45 MINUTES MAX)
-Make a jQuery project and add it to the jquery directory. It can be tiny, and it can do whatever you like, as long as you can say in good faith that you're practicing what you've learned and improving your jQuery skills.
+
+I made a thing!
