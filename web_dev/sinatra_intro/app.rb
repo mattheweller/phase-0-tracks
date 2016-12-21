@@ -9,8 +9,7 @@ db.results_as_hash = true
 # add a query parameter
 # GET /
 get '/' do
-  # "<h1>Hello World!</h1>"
-  "#{params[:name]} is #{params[:age]} years old."
+  "<h1>Hello World!</h1>"
 end
 
 # write a GET route with
@@ -24,8 +23,8 @@ get '/:person_1/loves/:person_2' do
   "#{params[:person_1]} loves #{params[:person_2]}"
 end
 
-write a GET route that retrieves
-all student data
+# write a GET route that retrieves
+# all student data
 get '/students' do
   students = db.execute("SELECT * FROM students")
   response = ""
@@ -37,13 +36,13 @@ get '/students' do
   end
   response
 end
-
 # write a GET route that retrieves
 # a particular student
 
 get '/students/:id' do
   student = db.execute("SELECT * FROM students WHERE id=?", [params[:id]])[0]
-  # student.to_s
+  p student
+  p [params[:id]]
   result = ""
   result << "ID: #{student['id']}<br>"
   result << "Name: #{student['name']}<br>"
@@ -69,4 +68,23 @@ end
 get '/:number_1/math/:number2' do
   "#{params[:number_1]} plus #{params[:number2]} eqauls
   #{(params[:number_1]).to_i + (params[:number_1]).to_i}"
+end
+
+get '/search' do
+  %q{<form method="post">
+    Enter the student ID you'd like to search for: <input type="text" name="name" />
+    <input type="submit" value="Enter" />
+  </form>}
+end
+
+post '/search' do
+  # p params[:name]
+  student = db.execute("SELECT * FROM students WHERE id=?", params[:name].to_i)[0]
+  # p student
+  result = ""
+  result << "ID: #{student['id']}<br>"
+  result << "Name: #{student['name']}<br>"
+  result << "Age: #{student['age']}<br>"
+  result << "Campus: #{student['campus']}<br><br>"
+  result
 end
