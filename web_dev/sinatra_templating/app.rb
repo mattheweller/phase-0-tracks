@@ -18,7 +18,9 @@ get '/students/new' do
   erb :new_student
 end
 
-get '/campuses/sort' do
+get '/campuses' do
+  # @attendees = db.execute("SELECT * FROM students WHERE campus=?", params[:campus])
+  # @attendees = db.execute("SELECT * FROM students") #WHERE campus=?", params[:campus])
   erb :campuses
 end
 
@@ -30,9 +32,18 @@ post '/students' do
   redirect '/'
 end
 
-post '/campuses' do
-  p params
-  # db.execute("SELECT * FROM students WHERE campus=?" params[:campus])
-  # redirect '/'
-  # @students.select { |student| student['campus'] == params[:campus] }
-end
+# post '/campuses' do
+#   p params
+#   <button type="submit">View</button>
+#   "<h1>Hello World!</h1>"
+#   # @attendees = db.execute("SELECT * FROM students WHERE campus=?", params[:campus])
+#   # response = ""
+#   # @attendees.each do |student|
+#   #   response << "ID: #{student['id']}<br>"
+#   #   response << "Name: #{student['name']}<br>"
+#   #   response << "Age: #{student['age']}<br>"
+#   #   response << "Campus: #{student['campus']}<br><br>"
+#   # end
+#   # response
+#   # redirect '/campuses'
+# end

@@ -2,8 +2,40 @@
 <html>
 <head>
   <title>Sort Students by Campus</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <table class="campuses">
+    <thead>
+      <tr>
+        <th>Location</th>
+        <th>Abbreviation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>San Francisco</td>
+        <td>SF</td>
+      </tr>
+      <tr class="even">
+        <td>San Diego</td>
+        <td>SD</td>
+      </tr>
+      <tr>
+        <td>Seattle</td>
+        <td>SEA</td>
+      </tr>
+      <tr class="even">
+        <td>Chicago</td>
+        <td>CHI</td>
+      </tr>
+      <tr>
+        <td>New York City</td>
+        <td>NYC</td>
+      </tr>
+    </tbody>
+  </table>
+
   <form action="/campuses" method="POST">
     <p>What campus would you like to view?</p>
     <!-- <input type="text" name="name" placeholder="Name"> -->
@@ -11,9 +43,10 @@
     <!-- <input type="text" name="age" placeholder="Age"> -->
     <button type="submit">View</button>
   </form>
+
   <!--
   <select name="Campuses">
-    <option value="SF">San Francisco</option>
+    <option value="SF"></option>
     <option value="SD">San Diego</option>
     <option value="SEA">Seattle</option>
     <option value="CHI">Chicago</option>
