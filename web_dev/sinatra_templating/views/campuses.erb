@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Sort Students by Campus</title>
+  <title>Campuses</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -37,19 +37,15 @@
   </table>
 
   <form action="/campuses" method="POST">
-    <p>Please enter the campus abbreviation you would like to view</p>
-    <!-- <input type="text" name="campus" placeholder="Campus">
-    <button type="submit">View</button>
-  </form> -->
-
-
-  <select name="campus">
-    <option value="SF">San Francisco</option>
-    <option value="SD">San Diego</option>
-    <option value="SEA">Seattle</option>
-    <option value="CHI">Chicago</option>
-    <option value="NYC">New York City</option>
-  </select>
-</form>
+    <p>Please select the campus you would like to view</p>
+    <select name="campus">
+      <option value="SF">San Francisco</option>
+      <option value="SD">San Diego</option>
+      <option value="SEA">Seattle</option>
+      <option value="CHI">Chicago</option>
+      <option value="NYC">New York City</option>
+    </select>
+      <button type="submit">View</button>
+  </form>
 </body>
 </html>
